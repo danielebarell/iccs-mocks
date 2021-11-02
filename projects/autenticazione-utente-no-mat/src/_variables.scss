@@ -1,0 +1,22 @@
+$colors: (
+  "--white":#ffffff,
+  "--gray":#957f7f,
+  "--cold-gray": #e8ebef,
+  "--berry": #b33b96,
+  "--vanilla":rgb(250, 241, 211),
+  "--cerulean": #49bfdb,
+  "--transparent": rgba(0,0,0,0),
+);
+$typography:(
+  "--fonts" :("Gill Sans MT", Arial, sans-serif),
+  /*--font-size is the same as the mat-icon size*/
+  "--font-size": 24px,
+  "--input-font-size" : 14px,
+);
+$borders:(
+  "--border-radius": .25rem,
+);
+$measures:(
+  "--top-bottom-margin": 1.5rem,
+);
+

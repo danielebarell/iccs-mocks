@@ -1,0 +1,18 @@
+@use "~@angular/material" as mat;
+@include mat.core();
+//
+$iccs-primary: mat.define-palette(mat.$cyan-palette);
+$iccs-accent: mat.define-palette(mat.$purple-palette);
+$iccs-warn: mat.define-palette(mat.$deep-orange-palette);
+//
+$color-palettes:(primary: $iccs-primary, accent: $iccs-accent, warn: $iccs-warn);
+//
+$iccs-theme: mat.define-light-theme((
+  color: $color-palettes
+));
+//
+@include mat.core-theme($iccs-theme);
+//
+@include mat.button-theme($iccs-theme);
+@include mat.input-theme($iccs-theme);
+@include mat.form-field-theme($iccs-theme);

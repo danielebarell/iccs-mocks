@@ -1,0 +1,107 @@
+@use "./projects/autenticazione-utente-no-mat/src/_variables" as vars;
+@use "sass:map";
+@use "sass:color";
+//TODO: How to pass sass variables into css variables seamlessly?
+/*
+:host{
+  --white: map.get(vars.$colors,'--white');
+  --gray: #957f7f;
+  --cold-gray: #e8ebef;
+  --berry: #b33b96;
+  --cerulean: #49bfdb;
+  --transparent: rgba(0,0,0,0);
+  --fonts:"Gill Sans MT", Arial, sans-serif;
+  --font-size: 24px;
+  --border-radius: .25rem;
+  --top-bottom-margin: 1.5rem;
+}
+*/
+:host{
+  width: 50%;
+}
+form{
+  font-family: map.get(vars.$typography,'--fonts');
+  font-weight: 500;
+  &.flex-form{
+    padding-bottom: 2rem;
+    fieldset{
+      legend{
+        color: map.get(vars.$colors, "--cerulean");
+        font-weight: bold;
+        padding-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+    }
+    div{
+      display: flex;
+      position: relative;
+    }
+    label{
+      display: block;
+      padding: 0.6em 0 0.3em;
+      color: map.get(vars.$colors, "--gray");
+    }
+    label.required::after{
+      display: inline-block;
+      padding-left: 0.3em ;
+      content: "*";
+      color: map.get(vars.$colors, "--berry");
+    }
+    input, input:active{
+      width: 100%;
+      border: none;
+      outline: none;
+      border-radius: map.get(vars.$borders,"--border-radius");
+      background-color: map.get(vars.$colors, "--cold-gray");
+      font-family: map.get(vars.$typography, "--fonts");
+      font-size: map.get(vars.$typography,"--input-font-size");
+      padding: 5px;
+    }
+    input+button{
+      position: absolute;
+      right: 0;
+      border: none;
+      outline: none;
+      background-color: map.get(vars.$colors, "--transparent");;
+    }
+    .translucent{
+      background-color: transparent;
+      border: none;
+    }
+    .max{
+      width: 100%;
+      *{
+        width: 100%;
+      }
+    }
+    .width-25{
+      max-width: 25px;
+    }
+    .flex-right {
+      justify-content: flex-end;
+      * {
+        width: unset;
+      }
+    }
+  }
+}
+button[type=submit]{
+  --barry: #{map.get(vars.$colors, "--berry")};
+  $barry: map.get(vars.$colors, "--berry");
+  margin: map.get(vars.$measures, "--top-bottom-margin") 0;
+  padding: .4em 1em;
+  border:none;
+  border-radius: map.get(vars.$borders, "--border-radius");
+  outline: none;
+  background-color: var(--barry);
+  color: map.get(vars.$colors, "--white");
+  font-family: map.get(vars.$typography, "--fonts");
+  font-size: 1rem;
+  &:focus{
+    box-shadow: 0 0 2px 1px var(--barry);
+    color: map.get(vars.$colors, "--vanilla");
+  }
+  &[disabled]{
+    background-color: color.adjust($barry,$alpha: -0.5);
+  }
+}

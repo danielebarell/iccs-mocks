@@ -1,0 +1,33 @@
+ul{
+  margin: .5rem .5rem;
+ &.list-horizontal{
+   display: inline;
+   li{
+     display:inline;
+   }
+ }
+  &.pad-left{
+    li{
+      padding-left: .5rem;
+    }
+  }
+}
+a.spid-button{
+  $blue-spid: hsl(220,50%,50%);
+  position: relative;
+  padding: 7px;
+  background-color: $blue-spid;
+  text-decoration: none;
+  span.spid-label{
+    color: white;
+  }
+  span.spid-label::before{
+    display: inline-block;
+    content:'';
+    width: 40px;
+    height: 40px;
+    background-image:url("../../assets/entraspid.png");
+    transform: scale(.55) translate(-20%, 65%);
+  }
+}
+

@@ -1,0 +1,38 @@
+//
+:host{
+  width: 50%;
+}
+form.flex-form{
+  padding-bottom: 2rem;
+  fieldset{
+    legend{
+      color: #49bfdb;
+      font-weight: bold;
+      padding-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+  }
+  div{
+    display: flex;
+  }
+  .translucent{
+    background-color: transparent;
+    border: none;
+  }
+  .max{
+    width: 100%;
+    *{
+      width: 100%;
+    }
+  }
+  .width-25{
+    max-width: 25px;
+  }
+  .flex-right {
+    justify-content: flex-end;
+    * {
+      width: unset;
+    }
+  }
+}
+

@@ -1,0 +1,48 @@
+<!-- note bay dan -->
+<!-- for default form-field options look at
+  registrati module,
+  providers:[
+    {provide:MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill', floatLabel:'always'}}
+  ]
+  -->
+  <form class="flex-form">
+    <fieldset>
+    <legend>Registrati</legend>
+    <!--Email-->
+      <div class="max">
+      <mat-form-field>
+      <mat-label>Email</mat-label>
+      <!--<input name="email" type="email" required matInput>-->
+        <input name="email" type="email" required [formControl]="userEmail" matInput>
+        <mat-error>{{getUserEmailError()}}</mat-error>
+    </mat-form-field>
+      </div>
+        <!--Password-->
+      <div class="max">
+      <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input name="password" [type]="isPasswordTextShown ? 'text' : 'password'" required matInput>
+          <button class="translucent width-25" matSuffix (click)="isPasswordTextShown = !isPasswordTextShown">
+          <mat-icon>{{isPasswordTextShown ? 'visibility_on' : 'visibility_off'}}</mat-icon>
+        </button>
+          <mat-error>Errore Password</mat-error>
+        </mat-form-field>
+    </div>
+      <!--Conferma Password-->
+      <div class="max">
+        <mat-form-field>
+          <mat-label>Conferma password</mat-label>
+          <input name="password_confirm" [type]="isPasswordConfirmTextShown ? 'text' : 'password'" required matInput>
+          <button class="translucent width-25" matSuffix (click)="isPasswordConfirmTextShown =
+          !isPasswordConfirmTextShown">
+            <mat-icon>{{isPasswordConfirmTextShown ? 'visibility_on' : 'visibility_off'}}</mat-icon>
+          </button>
+          <mat-error>Errore conferma password</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="flex-right">
+<!-- Button -->
+    <button mat-flat-button color="accent">Registrati</button>
+      </div>
+    </fieldset>
+  </form>
